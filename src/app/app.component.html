@@ -1,0 +1,77 @@
+<!-- <input type="text" [(ngModel)] = "name">
+{{name}} -->
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">       
+      <h3>AppComponent</h3>
+      <hr>
+      <!-- <app-servers></app-servers> -->
+      <!-- <div app-servers></div> -->
+      <div class="app-servers"></div>
+    </div>
+  </div>
+</div>
+<hr>
+<hr>
+<div class="container">
+  <div class="row">
+    <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+      <div>
+        <div class="form-group">
+          <label for="username">Username</label>
+          <input 
+            type="text"
+             id="username"
+             formControlName="username" 
+             class="form-control"
+             >
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input 
+            type="text"
+             id="email" 
+             formControlName="email" 
+             class="form-control"
+              >
+        </div>
+      </div>
+      <div class="form-group">
+          <!-- <input 
+            type="checkbox"
+            id="masculin"
+            class="checkbox"
+            ngModel
+            name="masculin" > -->
+      </div>
+      <!-- two way binding -->
+      <div class="radio" *ngFor="let gender of genders">
+        <label for="">
+          <input 
+            type="radio"
+            formControlName="gender" 
+             
+            [value]="gender"
+            >{{ gender }}
+        </label>
+      </div>
+      <button
+         class="btn btn-primary"
+          type="submit">Submit</button>  
+    </form>
+  </div>
+</div>
+<hr>
+<!-- <div class="container">
+  <div class="row" *ngIf="submitted">
+    <div class="col-xs-12">
+      <h3>Your Data </h3>
+      <p>Username: {{ user.username }} </p>
+      <p>Mail: {{ user.email }}</p>
+      <p>Secret Question : {{ user.secretQuestion}}</p>
+      <p>Answer: {{ user.answer }}</p>
+      <p>Gender: {{ user.gender }}</p>
+    </div>
+  </div>
+  </div> -->
